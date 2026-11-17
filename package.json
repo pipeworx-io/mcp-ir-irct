@@ -1,0 +1,33 @@
+{
+  "name": "@pipeworx/mcp-ir-irct",
+  "version": "0.1.0",
+  "description": "ir-irct -- the Iranian Registry of Clinical Trials (IRCT), run by the Ministry of Health and Medical Education (Iran) through Tehran University of Medical Sciences: Iran's national registry of clinical trials, a WHO primary registry.",
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./tools.json": "./tools.json",
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "mcp-ir-irct": "bin/cli.js"
+  },
+  "files": ["bin/", "lib/", "tools.json", "server.json"],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": ["mcp", "mcp-server", "model-context-protocol", "pipeworx", "ir-irct"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pipeworx-io/mcp-ir-irct.git"
+  },
+  "mcpName": "io.github.pipeworx-io/ir-irct",
+  "pipeworx": {
+    "mode": "gateway",
+    "slug": "ir-irct",
+    "gatewaySlug": "ir-irct",
+    "sourceHash": "v1-218330298695b01df1ab63d1ded0145389f5257bc66fe2e452700252824104c5",
+    "sourceCommit": "9b123410e80fd80deb8ee57bee9f84a34f5e3430"
+  }
+}

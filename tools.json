@@ -1,0 +1,42 @@
+[
+  {
+    "name": "ir_irct_trial_search",
+    "description": "Search the Iranian Registry of Clinical Trials (IRCT, Iran's national registry of clinical trials, a WHO primary registry). Free-text query in English or Persian over titles, conditions, interventions and sponsors, or an IRCT number. Each hit gives the IRCT number, the title and the record link; 25 results per page (page, next_page). Status, phase, sponsor and dates are in ir_irct_trial_get. No hit means none in this registry, not that no such trial exists. Example: query=\"gastric cancer\".",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "query": {
+          "type": "string",
+          "description": "Words from the title, condition, intervention or sponsor in English or Persian, or an IRCT number."
+        },
+        "page": {
+          "type": "number",
+          "description": "Result page, 25 per page (default 1); use next_page from the previous answer."
+        },
+        "limit": {
+          "type": "number",
+          "description": "Trials returned from the page (1-25, default 10)."
+        }
+      },
+      "required": [
+        "query"
+      ]
+    }
+  },
+  {
+    "name": "ir_irct_trial_get",
+    "description": "Fetch one Iranian Registry of Clinical Trials (IRCT) record by IRCT number (from ir_irct_trial_search): scientific and public titles, recruitment status, study type and design, phase, condition, intervention, sponsor organisation, contact organisations, target sample size, countries, registration, enrolment-start and completion dates, secondary identifiers and the record link. Registrants', investigators' and contacts' names, e-mail addresses, telephone numbers and street addresses are not returned. An unknown number returns found false. Example: trial_id=\"IRCT2016080318745N10\".",
+    "inputSchema": {
+      "type": "object",
+      "properties": {
+        "trial_id": {
+          "type": "string",
+          "description": "IRCT number such as IRCT2016080318745N10."
+        }
+      },
+      "required": [
+        "trial_id"
+      ]
+    }
+  }
+]
